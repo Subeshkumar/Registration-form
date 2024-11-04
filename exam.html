@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f8ff;
+            margin-top: 20%;
+        }
+        .quiz-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            display: none; /* Hide all questions initially */
+        }
+        .question.active {
+            display: block; /* Show only active question */
+        }
+        .submit-btn, .next-btn, .prev-btn {
+            display: inline-block;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit-btn:hover, .next-btn:hover, .prev-btn:hover {
+            background-color: #218838;
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>HTML & CSS Quiz</h1>
+        <form id="quizForm">
+            <!-- Questions -->
+            <div class="question active">
+                <h3>1. What does HTML stand for?</h3>
+                <label><input type="radio" name="q1" value="A"> Hyperlinks and Text Markup Language</label><br>
+                <label><input type="radio" name="q1" value="B"> Hyper Text Markup Language</label><br>
+                <label><input type="radio" name="q1" value="C"> Home Tool Markup Language</label><br>
+                <label><input type="radio" name="q1" value="D"> Hyperlinking Text Mark Language</label><br>
+            </div>
+
+            <div class="question">
+                <h3>2. Which tag is used to create a hyperlink in HTML?</h3>
+                <label><input type="radio" name="q2" value="A"> &lt;link&gt;</label><br>
+                <label><input type="radio" name="q2" value="B"> &lt;a&gt;</label><br>
+                <label><input type="radio" name="q2" value="C"> &lt;href&gt;</label><br>
+                <label><input type="radio" name="q2" value="D"> &lt;hyper&gt;</label><br>
+            </div><div class="question">
+                <h3>3. Which CSS property is used to change text color?</h3>
+                <label><input type="radio" name="q3" value="A"> font-color</label><br>
+                <label><input type="radio" name="q3" value="B"> color</label><br>
+                <label><input type="radio" name="q3" value="C"> text-color</label><br>
+                <label><input type="radio" name="q3" value="D"> background-color</label><br>
+            </div>
+
+            <div class="question">
+                <h3>4. Which HTML tag is used to define an unordered list?</h3>
+                <label><input type="radio" name="q4" value="A"> &lt;ul&gt;</label><br>
+                <label><input type="radio" name="q4" value="B"> &lt;ol&gt;</label><br>
+                <label><input type="radio" name="q4" value="C"> &lt;li&gt;</label><br>
+                <label><input type="radio" name="q4" value="D"> &lt;list&gt;</label><br>
+            </div>
+
+            <div class="question">
+                <h3>5. Which CSS property controls the font size?</h3>
+                <label><input type="radio" name="q5" value="A"> font-weight</label><br>
+                <label><input type="radio" name="q5" value="B"> font-style</label><br>
+                <label><input type="radio" name="q5" value="C"> font-size</label><br>
+                <label><input type="radio" name="q5" value="D"> text-size</label><br>
+            </div>
+
+            <div class="question">
+                <h3>6. Which tag is used to insert an image in HTML?</h3>
+                <label><input type="radio" name="q6" value="A"> &lt;img&gt;</label><br>
+                <label><input type="radio" name="q6" value="B"> &lt;image&gt;</label><br>
+                <label><input type="radio" name="q6" value="C"> &lt;src&gt;</label><br>
+                <label><input type="radio" name="q6" value="D"> &lt;picture&gt;</label><br>
+            </div>
+
+            <div class="question">
+                <h3>7. Which CSS property is used to set the background color?</h3>
+                <label><input type="radio" name="q7" value="A"> color</label><br>
+                <label><input type="radio" name="q7" value="B"> background</label><br>
+                <label><input type="radio" name="q7" value="C"> bg-color</label><br>
+                <label><input type="radio" name="q7" value="D"> background-color</label><br>
+            </div>
+
+            <div class="question">
+                <h3>8. Which HTML tag is used to create a line break?</h3>
+                <label><input type="radio" name="q8" value="A"> &lt;br&gt;</label><br>
+                <label><input type="radio" name="q8" value="B"> &lt;lb&gt;</label><br>
+                <label><input type="radio" name="q8" value="C"> &lt;break&gt;</label><br>
+                <label><input type="radio" name="q8" value="D"> &lt;line&gt;</label><br>
+            </div>
+
+            <div class="question">
+                <h3>9. What does CSS stand for?</h3>
+                <label><input type="radio" name="q9" value="A"> Creative Style Sheets</label><br>
+                <label><input type="radio" name="q9" value="B"> Cascading Style Sheets</label><br>
+                <label><input type="radio" name="q9" value="C"> Colorful Style Sheets</label><br>
+                <label><input type="radio" name="q9" value="D"> Computer Style Sheets</label><br>
+            </div>
+
+            <div class="question">
+                <h3>10. Which HTML element is used for the largest heading?</h3>
+                <label><input type="radio" name="q10" value="A"> &lt;h1&gt;</label><br>
+                <label><input type="radio" name="q10" value="B"> &lt;heading&gt;</label><br>
+                <label><input type="radio" name="q10" value="C"> &lt;h6&gt;</label><br>
+                <label><input type="radio" name="q10" value="D"> &lt;h&gt;</label><br>
+            </div>
+
+
+            <!-- Additional questions follow the same structure -->
+
+            <!-- Button container for Next and Previous -->
+            <div class="button-container">
+                <button type="button" class="prev-btn" onclick="showPreviousQuestion()" style="display:none; background-color: #10b924;">Previous</button>
+                <button type="button" class="next-btn" onclick="showNextQuestion()" style="background-color: #218838;">Next</button>
+                <button type="button" class="submit-btn" onclick="calculateScore()" style="display:none; background-color: red;">Submit</button>
+            </div>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        const answers = {
+            q1: "B", q2: "B", q3: "B", q4: "A", q5: "C",
+            q6: "A", q7: "D", q8: "A", q9: "B", q10: "A"
+        };
+
+        let currentQuestion = 0;
+
+        function showNextQuestion() {
+            const questions = document.querySelectorAll('.question');
+            questions[currentQuestion].classList.remove('active');
+
+            currentQuestion++;
+            questions[currentQuestion].classList.add('active');
+
+            // Show Previous button if not on the first question
+            document.querySelector('.prev-btn').style.display = currentQuestion > 0 ? 'inline-block' : 'none';
+
+            // Show Submit button on the last question, hide Next button
+            if (currentQuestion === questions.length - 1) {
+                document.querySelector('.submit-btn').style.display = 'block';
+                document.querySelector('.next-btn').style.display = 'none';
+            }
+        }
+
+        function showPreviousQuestion() {
+            const questions = document.querySelectorAll('.question');
+            questions[currentQuestion].classList.remove('active');
+
+            currentQuestion--;
+            questions[currentQuestion].classList.add('active');
+
+            // Hide Previous button on the first question
+            document.querySelector('.prev-btn').style.display = currentQuestion > 0 ? 'inline-block' : 'none';
+
+            // Show Next button if not on the last question
+            if (currentQuestion < questions.length - 1) {
+                document.querySelector('.submit-btn').style.display = 'none';
+                document.querySelector('.next-btn').style.display = 'inline-block';
+            }
+        }
+
+        function calculateScore() {
+    let score = 0;
+    const formData = new FormData(document.getElementById('quizForm'));
+
+    for (let [key, value] of formData.entries()) {
+        if (value === answers[key]) {
+            score++;
+        }
+    }
+    
+    // Append score to formData
+    formData.append("score", score);
+
+    fetch('https://script.google.com/macros/s/AKfycbwsTZMxLFzqVF3IigtIQbYnH8-whb3jbCZAS8abQ6a7mxxi2MsV6J0C31q6niAF5s7P/exec', { // Replace with your deployment URL
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(text => console.log("Success:", text))
+    .catch(error => console.error("Error:", error));
+
+    document.getElementById('result').textContent = `You scored ${score} out of 10`;
+    alert("Thank you for participating in the quiz!!!!");
+}
+
+    </script>
+</body>
+</html>

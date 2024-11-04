@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration-Form</title>
+</head>
+<body>
+
+<div class="container">
+    <form action="./exam.html" autocomplete="off" method="post" name="google-sheet">
+        <h2>Registration form</h2>
+    
+        <div class="data">
+            <div>    
+                <label>College name</label>
+                <select name="College" required>
+                    <option value="Not selected">Select College</option>
+                    <option value="kiet">kiet</option>
+                    <option value="Abesit">Abesit</option>
+                    <option value="Rdcollege">Rdcollege</option>
+                    <option value="Rkgit">Rkgit</option>
+                </select>
+            </div>
+            <div>    
+                <label>Candidate Name</label>
+                <input type="text" name="Candidate-name" required>
+            </div>
+            <div>    
+                <label>Date of Birth</label>
+                <input type="date" name="Date-of-Birth" required>
+            </div>
+            <div>    
+                <label>Email</label>
+                <input type="email" name="Email" required>
+            </div>
+            <div>    
+                <label>Mobile Number</label>
+                <input type="text" name="Phone Number" pattern="[7-9]{1}[0-9]{9}" 
+       title="Phone number with 7-9 and remaing 9 digit with 0-9" required>
+            </div>
+            <div>    
+                <label>Course</label>
+                <select name="Course" required>
+                    <option value="Not selected">Select course</option>
+                    <option value="Computer science and engineering">Computer science and engineering</option>
+                    <option value="Artificial intelligence">Artificial intelligence</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="Internet of Things">Internet of Things</option>
+                </select>
+            </div>
+            <div>    
+                <label>Year</label>
+                <select name="Year" required>
+                    <option value="Not selected">Year</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div>
+                <label>Gender</label>
+                <div class="form-inline" name="Gender">
+                    <label>
+                       Male<input type="radio" name="Gender" value="Male">
+                    </label>
+                    <label>
+                       Female<input type="radio" name="Gender" value="Female">
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div>
+            <input type="submit" name="submit" onclick="popup()" value="SUBMIT">
+        </div>
+        
+    </form>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwsuBjfCCLe7pOFfgw-ldYLeEq5K2U-S5SQe7dW-d_oMIys7XryKTCjPvZImV18CDJ1/exec';
+    const form = document.forms['google-sheet'];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => window.location.href = "./exam.html")
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
+
+<script>
+    function popup(){
+        alert("Registration successfully !!!!");
+    }
+</script>
+</body>
+</html>
